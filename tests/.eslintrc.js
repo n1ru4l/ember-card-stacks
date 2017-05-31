@@ -15,7 +15,7 @@ module.exports = {
         'quotes': [`error`, `backtick`, {
             'avoidEscape': true
         }],
-        'semi': [`error`, `always`],
+        'semi': [`error`, `never`],
         'prefer-const': [`error`],
         'comma-dangle': [`error`, `always-multiline`],
         'object-curly-spacing': [`error`, `always`],
