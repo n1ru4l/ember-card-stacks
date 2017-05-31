@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember"
   ],
   "license": "MIT",
   "author": "",
@@ -15,7 +16,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "ember try:each",
+    "lint": "eslint app addon tests config --fix"
   },
   "dependencies": {
     "ember-cli-babel": "^6.0.0"
