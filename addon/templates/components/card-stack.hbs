@@ -1,9 +1,14 @@
-{{yield
-  (hash
-    currentItem=currentItem
-    visibleItems=visibleItems
-    card=(component "card-item"
-      visibleItemAmount=visibleItems.length
-    )
-  )
-}}
+{{#each visibleItems as |visibleItem index|}}
+  {{#card-item
+    isInitialRender=isInitialRender
+    visibleItemAmount=visibleItems.length
+    index=index
+    isLast=(eq visibleItem visibleItems.lastObject)
+    isActive=(eq visibleItem currentItem)
+  }}
+    {{yield (hash
+      item=visibleItem
+      itemIndex=index
+    )}}
+  {{/card-item}}
+{{/each}}

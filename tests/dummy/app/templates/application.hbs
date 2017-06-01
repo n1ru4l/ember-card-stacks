@@ -3,21 +3,24 @@
 {{outlet}}
 
 {{#card-stack
+  class="card-stack--default"
   items=items
   visibleItemAmount=visibleItemAmount
   currentItemIndex=currentItemIndex
-  as |stack|
+  as |context|
 }}
-  {{#each stack.visibleItems as |visibleItem index|}}
-    {{#stack.card
-      index=index
-      isLast=(eq visibleItem stack.visibleItems.lastObject)
-      isActive=(eq visibleItem stack.currentItem)
-    }}
-      {{visibleItem.value}}
-    {{/stack.card}}
-  {{/each}}
+  <div
+    class="card-stack-item__inner"
+    style="background-color:{{context.item.color}}"
+  >
+    Card {{context.item.value}}
+    {{#unless (eq context.item items.lastObject)}}
+      <button
+        class="navigator-button"
+        onclick={{action "next"}}
+      >
+        Next
+      </button>
+    {{/unless}}
+  </div>
 {{/card-stack}}
-
-
-<button onclick={{action "next"}}>Next</button>

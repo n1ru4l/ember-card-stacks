@@ -3,6 +3,7 @@ import Component from 'ember-component'
 // import set from 'ember-metal/set'
 import computed from 'ember-computed'
 import { A as EArray } from 'ember-array/utils'
+import run from 'ember-runloop'
 
 // import on from 'ember-evented/on'
 import layout from '../templates/components/card-stack'
@@ -14,8 +15,10 @@ export default Component.extend({
   layout,
   // props
   items: null,
-  visibleItemAmount: null,
+  visibleItemAmount: 3,
   currentItemIndex: 0,
+  // state
+  isInitialRender: true,
   // computed state
   currentItem: computed(`currentItemIndex`, `items.[]`, function () {
     const currentItemIndex = this.get(`currentItemIndex`)
@@ -30,4 +33,10 @@ export default Component.extend({
     activeItems.reverse()
     return activeItems
   }),
+  // lifecycle
+  didInsertElement() {
+    run.next(() => {
+      this.set(`isInitialRender`, false)
+    })
+  },
 })
