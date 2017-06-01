@@ -1,0 +1,24 @@
+.card-stack {
+  margin: 0 auto;
+  position: relative;
+  z-index: 1000;
+  width: 500px;
+  height: 300px;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+  perspective: 1000px;
+  perspective-origin: 50% -50%;
+}
+
+.card-stack__item {
+  backface-visibility: hidden;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background-color: orangered;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
