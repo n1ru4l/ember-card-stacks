@@ -1,0 +1,129 @@
+@import 'ember-paper';
+
+* {
+  user-select: none;
+}
+
+html,
+body {
+  background-color: #ADD8E6;
+}
+
+body {
+  height: auto;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+}
+
+main > * {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+.hljs {
+  user-select: text;
+  * {
+    user-select: text;
+  }
+}
+
+.card-stack--default {
+  height: 60vh;
+  margin-bottom: 50px;
+}
+
+.card-stack-item__inner {
+  display: flex;
+  flex-flow: column;
+  height: inherit;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.navigator-button {
+  margin-top: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 0;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.box > h3 {
+  margin: 0;
+  padding: 20px;
+  background-color: #1E90FF;
+  color: #ffffff;
+}
+
+.box > h3 + * {
+  margin-top: 0;
+  background-color: #ffffff;
+}
+
+.github-fork-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  height: auto;
+  max-width: 100px;
+}
+
+.github-fork-button img {
+  width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  user-select: none;
+}
+
+table > tr > td {
+  padding: 10px;
+
+  &:nth-child(2) {
+    width: 100%;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 60vw;
+  }
+
+  .github-fork-button {
+    max-width: 110px;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    width: 50vw;
+  }
+
+  .github-fork-button {
+    max-width: 130px;
+  }
+}

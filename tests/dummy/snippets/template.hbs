@@ -1,0 +1,19 @@
+{{#card-stack
+  class="card-stack--default"
+  items=items
+  visibleItemAmount=visibleItemAmount
+  as |context|
+}}
+  <div
+    class="card-stack-item__inner"
+    style="background-color:{{context.item.color}}"
+  >
+    Card {{context.item.value}}
+    <button
+      class="navigator-button"
+      onclick={{action "next"}}
+    >
+      Next
+    </button>
+  </div>
+{{/card-stack}}

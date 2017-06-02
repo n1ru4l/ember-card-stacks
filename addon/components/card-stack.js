@@ -1,11 +1,8 @@
 import Component from 'ember-component'
-// import get from 'ember-metal/get'
-// import set from 'ember-metal/set'
 import computed from 'ember-computed'
 import { A as EArray } from 'ember-array/utils'
 import run from 'ember-runloop'
 
-// import on from 'ember-evented/on'
 import layout from '../templates/components/card-stack'
 
 export default Component.extend({

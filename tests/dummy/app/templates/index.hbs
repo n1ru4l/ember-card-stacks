@@ -1,0 +1,54 @@
+{{#card-stack
+  class="card-stack--default"
+  items=items
+  visibleItemAmount=visibleItemAmount
+  currentItemIndex=currentItemIndex
+as |context|
+}}
+  <div
+    class="card-stack-item__inner"
+    style="background-color:{{context.item.color}}"
+  >
+    Card {{context.item.value}}
+    {{#unless (eq context.item items.lastObject)}}
+      <button
+        class="navigator-button"
+        onclick={{action "next"}}
+      >
+        Next
+      </button>
+    {{/unless}}
+  </div>
+{{/card-stack}}
+
+<div class="box">
+  <h3>Options</h3>
+  <table>
+    <tr>
+      <td>visibleItemAmount</td>
+      <td>
+        {{paper-slider
+          min=3
+          max=10
+          value=visibleItemAmount
+          onChange=(action (mut visibleItemAmount))
+        }}
+      </td>
+    </tr>
+  </table>
+</div>
+
+<h2>Code Sample</h2>
+
+<div class="box">
+  <h3>Controller</h3>
+  {{code-snippet name="controller.js"}}
+</div>
+<div class="box">
+  <h3>Route Template</h3>
+  {{code-snippet name="template.hbs"}}
+</div>
+<div class="box">
+  <h3>Styles</h3>
+  {{code-snippet name="styles.css"}}
+</div>

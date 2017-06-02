@@ -1,0 +1,14 @@
+.card-stack--default {
+  width: 50vw;
+  height: 60vh;
+}
+
+.card-stack-item__inner {
+  display: flex;
+  flex-flow: column;
+  height: inherit;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
