@@ -9,6 +9,7 @@
     {{yield (hash
       item=visibleItem
       itemIndex=index
+      isActive=(eq visibleItem currentItem)
     )}}
   {{/card-item}}
 {{/each}}

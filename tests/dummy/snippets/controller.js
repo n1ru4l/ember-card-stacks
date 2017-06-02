@@ -18,11 +18,16 @@ for (let i = 0; i < 20; i++) {
 
 export default Controller.extend({
   items,
+  currentItemIndex: 0,
   visibleItemAmount: 3,
   actions: {
     next() {
+      // Infinite cards
       const item = items.shiftObject()
       items.pushObject(item)
+      // Finite cards
+      // this.incrementProperty(`currentItemIndex`)
+      //
     },
   },
 })

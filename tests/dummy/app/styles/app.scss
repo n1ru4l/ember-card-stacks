@@ -1,12 +1,21 @@
 @import 'ember-paper';
 
+$color-light-blue: rgb(173, 216, 230);
+$color-blue: rgb(30, 144, 255);
+$color-white: rgb(255, 255, 255);
+
+$body-background-color: $color-light-blue;
+$box-title-background-color: $color-blue;
+$box-title-color: $color-white;
+$box-background-color: $color-white;
+
 * {
   user-select: none;
 }
 
 html,
 body {
-  background-color: #ADD8E6;
+  background-color: $body-background-color;
 }
 
 body {
@@ -37,6 +46,7 @@ h2 {
 }
 
 .hljs {
+  font-family: 'Roboto Mono', monospace;
   user-select: text;
   * {
     user-select: text;
@@ -71,16 +81,20 @@ h2 {
 .box > h3 {
   margin: 0;
   padding: 20px;
-  background-color: #1E90FF;
-  color: #ffffff;
+  background-color: $box-title-background-color;
+  color: $box-title-color;
+}
+
+.box > h3 md-icon:last-child {
+  float: right;
 }
 
 .box > h3 + * {
   margin-top: 0;
-  background-color: #ffffff;
+  background-color: $box-background-color;
 }
 
-.github-fork-button {
+.fork-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -89,7 +103,7 @@ h2 {
   max-width: 100px;
 }
 
-.github-fork-button img {
+.fork-button img {
   width: 100%;
   height: auto;
 }
@@ -98,13 +112,14 @@ table {
   width: 100%;
   user-select: none;
 }
-
-table > tr > td {
+table > tr > * {
   padding: 10px;
+  text-align: left;
 
-  &:nth-child(2) {
+  &:last-child {
     width: 100%;
     padding-right: 20px;
+    text-align: right
   }
 }
 

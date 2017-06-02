@@ -2,7 +2,7 @@ import Component from 'ember-component'
 import layout from '../templates/components/card-item'
 import computed from 'ember-computed'
 import run from 'ember-runloop'
-import anime from 'ember-card-stacks/animejs'
+import anime from 'animejs'
 
 const fadeOut = targets => anime({
   targets,

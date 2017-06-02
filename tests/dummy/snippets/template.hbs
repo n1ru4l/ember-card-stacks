@@ -1,6 +1,7 @@
 {{#card-stack
   class="card-stack--default"
   items=items
+  currentItemIndex=currentItemIndex
   visibleItemAmount=visibleItemAmount
   as |context|
 }}
@@ -9,6 +10,9 @@
     style="background-color:{{context.item.color}}"
   >
     Card {{context.item.value}}
+    {{#if context.item.isActive}}
+      This is the active card
+    {{/if}}
     <button
       class="navigator-button"
       onclick={{action "next"}}
