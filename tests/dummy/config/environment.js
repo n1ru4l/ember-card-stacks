@@ -5,7 +5,7 @@ module.exports = function(environment) {
   const ENV = {
     modulePrefix: `dummy`,
     environment,
-    rootURL: `/`,
+    rootURL: `/ember-card-stacks`,
     locationType: `auto`,
     EmberENV: {
       FEATURES: {
