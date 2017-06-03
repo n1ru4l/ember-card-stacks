@@ -22,6 +22,7 @@ export default Component.extend({
   createShiftAnimation: null,
   // state
   style: null,
+  currentAnimation: null,
   // computed state
   factor: computed(`index`, `visibleItemAmount`, function () {
     const index = this.get(`index`)
@@ -38,7 +39,11 @@ export default Component.extend({
     this._super(...args)
   },
   didReceiveAttrs(...args) {
-    run.next(this.shiftCard)
+    const currentAnimation = this.get(`currentAnimation`)
+    if (currentAnimation) {
+      currentAnimation.pause()
+    }
+    run.scheduleOnce(`afterRender`, this.shiftCard)
     this._super(...args)
   },
   willDestroyElement(...args) {
@@ -58,6 +63,6 @@ export default Component.extend({
   shiftCard() {
     const opts = this.createShiftAnimation(this.get(`factor`) - 1)
     opts.targets = this.element
-    return anime(opts)
+    this.set(`currentAnimation`, anime(opts))
   },
 })
