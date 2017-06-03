@@ -2,37 +2,14 @@ import Component from 'ember-component'
 import layout from '../templates/components/card-item'
 import computed from 'ember-computed'
 import run from 'ember-runloop'
+import { htmlSafe } from 'ember-string'
 import anime from 'animejs'
-
-const fadeOut = targets => anime({
-  targets,
-  translateX: {
-    value: 1024,
-    duration: 350,
-  },
-  rotate: {
-    value: `10deg`,
-    duration: 350,
-  },
-  opacity: {
-    value: .3,
-    duration: 200,
-  },
-  easing: `easeInQuad`,
-}).finished
-
-const moveCard = (targets, factor) => anime({
-  targets,
-  translateY: factor * -15 + `px`,
-  scale: 1 - factor * .05,
-  duration: 300,
-  easing: `easeOutSine`,
-}).finished
 
 export default Component.extend({
   // template
   tagName: `div`,
   classNames: [ `card-stack-item` ],
+  attributeBindings: [ `style` ],
   layout,
   // props
   isInitialRender: true,
@@ -41,6 +18,10 @@ export default Component.extend({
   index: 0,
   wantedVisibleItemAmount: 0,
   visibleItemAmount: 0,
+  createFadeAnimation: null,
+  createShiftAnimation: null,
+  // state
+  style: null,
   // computed state
   factor: computed(`index`, `visibleItemAmount`, function () {
     const index = this.get(`index`)
@@ -49,18 +30,15 @@ export default Component.extend({
   }),
   // lifecycle
   init(...args) {
-    this.moveCard = this.moveCard.bind(this)
+    this.shiftCard = this.shiftCard.bind(this)
+    const isInitialRender = this.get(`isInitialRender`)
+    const factor = this.get(`factor`) - (isInitialRender ? 1 : 0)
+    const style = this.getInitialCardStyle(factor)
+    this.set(`style`, htmlSafe(style))
     this._super(...args)
   },
   didReceiveAttrs(...args) {
-    run.next(this.moveCard)
-    this._super(...args)
-  },
-  didInsertElement(...args) {
-    const isInitialRender = this.get(`isInitialRender`)
-    const factor = this.get(`factor`) - (isInitialRender ? 1 : 0)
-
-    this.element.style.transform = `translateY(${factor * -15}px) scale(${1 - factor * .05})`
+    run.next(this.shiftCard)
     this._super(...args)
   },
   willDestroyElement(...args) {
@@ -68,14 +46,18 @@ export default Component.extend({
       const element = this.element.cloneNode(true)
       element.setAttribute(`id`, null)
       this.element.parentNode.append(element)
-      fadeOut(element).then(() => {
+      const opts = this.createFadeAnimation()
+      opts.targets = element
+      anime(opts).finished.then(() => {
         element.remove()
       })
     }
     this._super(...args)
   },
   // methods
-  moveCard() {
-    moveCard(this.element, this.get(`factor`) - 1)
+  shiftCard() {
+    const opts = this.createShiftAnimation(this.get(`factor`) - 1)
+    opts.targets = this.element
+    return anime(opts)
   },
 })

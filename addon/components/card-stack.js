@@ -5,6 +5,31 @@ import run from 'ember-runloop'
 
 import layout from '../templates/components/card-stack'
 
+const createCardFadeAnimation = () => ({
+  translateX: {
+    value: 1024,
+    duration: 350,
+  },
+  rotate: {
+    value: `10deg`,
+    duration: 350,
+  },
+  opacity: {
+    value: .3,
+    duration: 200,
+  },
+  easing: `easeInQuad`,
+})
+
+const createCardShiftAnimation = (factor) => ({
+  translateY: factor * -15 + `px`,
+  scale: 1 - factor * .05,
+  duration: 300,
+  easing: `easeOutSine`,
+})
+
+const getInitialCardStyle = (factor) => `transform: translateY(${factor * -15}px) scale(${1 - factor * .05});`
+
 export default Component.extend({
   // template
   tagName: `div`,
@@ -14,6 +39,9 @@ export default Component.extend({
   items: null,
   visibleItemAmount: 3,
   currentItemIndex: 0,
+  createCardFadeAnimation,
+  createCardShiftAnimation,
+  getInitialCardStyle,
   // state
   isInitialRender: true,
   // computed state

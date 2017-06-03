@@ -5,6 +5,9 @@
     index=index
     isLast=(eq visibleItem visibleItems.lastObject)
     isActive=(eq visibleItem currentItem)
+    createFadeAnimation=createCardFadeAnimation
+    createShiftAnimation=createCardShiftAnimation
+    getInitialCardStyle=getInitialCardStyle
   }}
     {{yield (hash
       item=visibleItem

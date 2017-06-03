@@ -1,8 +1,8 @@
 (function() {
   function vendorModule() {
-    'use strict';
-    return { 'default': self['anime'] };
+    'use strict'
+    return { 'default': self['anime'] }
   }
 
-  define('animejs', [], vendorModule);
-})();
+  define('animejs', [], vendorModule)
+})()
