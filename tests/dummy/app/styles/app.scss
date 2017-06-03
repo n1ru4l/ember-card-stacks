@@ -111,6 +111,8 @@ h2 {
 table {
   width: 100%;
   user-select: none;
+  display: block;
+  overflow-x: scroll;
 }
 table > tr > * {
   padding: 10px;

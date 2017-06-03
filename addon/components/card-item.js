@@ -48,6 +48,21 @@ export default Component.extend({
     return visibleItemAmount - index
   }),
   // lifecycle
+  init(...args) {
+    this.moveCard = this.moveCard.bind(this)
+    this._super(...args)
+  },
+  didReceiveAttrs(...args) {
+    run.next(this.moveCard)
+    this._super(...args)
+  },
+  didInsertElement(...args) {
+    const isInitialRender = this.get(`isInitialRender`)
+    const factor = this.get(`factor`) - (isInitialRender ? 1 : 0)
+
+    this.element.style.transform = `translateY(${factor * -15}px) scale(${1 - factor * .05})`
+    this._super(...args)
+  },
   willDestroyElement(...args) {
     if (this.get(`isLast`)) {
       const element = this.element.cloneNode(true)
@@ -59,20 +74,8 @@ export default Component.extend({
     }
     this._super(...args)
   },
-  didReceiveAttrs(...args) {
-    const factor = this.get(`factor`) - 1
-
-    run.next(() => {
-      moveCard(this.element, factor)
-    })
-    this._super(...args)
-  },
-  didInsertElement(...args) {
-    const isInitialRender = this.get(`isInitialRender`)
-    const factor = this.get(`factor`) - (isInitialRender ? 1 : 0)
-
-    this.element.style.transform = `translateY(${factor * -15}px) scale(${1 - factor * .05})`
-
-    this._super(...args)
+  // methods
+  moveCard() {
+    moveCard(this.element, this.get(`factor`) - 1)
   },
 })
