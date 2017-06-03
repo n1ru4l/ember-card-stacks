@@ -3,6 +3,7 @@
   items=items
   visibleItemAmount=visibleItemAmount
   currentItemIndex=currentItemIndex
+  createCardFadeAnimation=createCardFadeAnimation
   as |context|
 }}
   <div
@@ -15,6 +16,11 @@
         onClick=(action "next")
       }}
         Next Card{{paper-icon "arrow_forward"}}
+      {{/paper-button}}
+      {{#paper-button
+        onClick=(action "nextAnimated")
+      }}
+        {{paper-icon "arrow_back"}} Next Card
       {{/paper-button}}
 
     {{/unless}}
