@@ -55,6 +55,7 @@ export default Component.extend({
       opts.targets = element
       anime(opts).finished.then(() => {
         element.remove()
+        this.sendAction(`onFadeEnd`)
       })
     }
     this._super(...args)

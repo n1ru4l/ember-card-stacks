@@ -64,4 +64,9 @@ export default Component.extend({
       this.set(`isInitialRender`, false)
     })
   },
+  actions: {
+    onFadeEnd() {
+      this.sendAction(`onFadeEnd`)
+    },
+  },
 })

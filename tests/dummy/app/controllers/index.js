@@ -67,6 +67,7 @@ export default Controller.extend({
   visibleItemAmount: 3,
   fadeAnimationFunctions,
   currentFadeAnimationFunctionIndex: 0,
+  isAnimating: false,
   // computed state
   maxItemIndex: computed(`items.length`, function () {
     return this.get(`items.length`) - 1
@@ -84,6 +85,7 @@ export default Controller.extend({
   }),
   actions: {
     next() {
+      this.set(`isAnimating`, true)
       this.set(`currentFadeAnimationFunctionIndex`, 0)
       run.next(() => {
         const item = items.shiftObject()
@@ -91,6 +93,7 @@ export default Controller.extend({
       })
     },
     nextAnimated() {
+      this.set(`isAnimating`, true)
       this.set(`currentFadeAnimationFunctionIndex`, 1)
       run.next(() => {
         const item = items.shiftObject()
@@ -106,6 +109,9 @@ export default Controller.extend({
       const isDecrementDisabled = this.get(`isDecrementDisabled`)
       if (isDecrementDisabled) return
       this.decrementProperty(`currentItemIndex`)
+    },
+    onFadeEnd() {
+      this.set(`isAnimating`, false)
     },
   },
 })

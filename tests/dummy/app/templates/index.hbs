@@ -4,13 +4,18 @@
   visibleItemAmount=visibleItemAmount
   currentItemIndex=currentItemIndex
   createCardFadeAnimation=createCardFadeAnimation
+  onFadeEnd=(action "onFadeEnd")
   as |context|
 }}
   <div
     class="card-stack-item__inner"
     style={{background-style context.item.color}}
   >
-    <p>Card {{context.item.value}}</p>
+    <p>
+      Card {{context.item.value}}
+      <br>
+      <b>is fading?</b>: {{isAnimating}}
+    </p>
     {{#unless (eq context.item items.lastObject)}}
       {{#paper-button
         onClick=(action "next")
@@ -46,7 +51,7 @@
         >
           NativeArray</a>
       </td>
-      <td>[]</td>
+      <td>-</td>
       <td>-</td>
       <td>Array of context values</td>
     </tr>
@@ -85,6 +90,28 @@
           {{paper-icon "remove"}}
         {{/paper-button}}
       </td>
+    </tr>
+    <tr>
+      <td>createCardFadeAnimation</td>
+      <td>Function</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        Returns a object of
+        <a
+          href="https://github.com/juliangarnier/anime#animatable-properties"
+          target="_blank"
+        >
+          Animatable Properties
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>onFadeEnd</td>
+      <td>Action</td>
+      <td>-</td>
+      <td>-</td>
+      <td>Action which is triggered after a card faded</td>
     </tr>
   </table>
 </div>

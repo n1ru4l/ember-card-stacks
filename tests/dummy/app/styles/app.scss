@@ -125,6 +125,10 @@ table > tr > * {
   }
 }
 
+.card-stack-item__inner {
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   main {
     width: 60vw;
@@ -137,7 +141,7 @@ table > tr > * {
 
 @media (min-width: 992px) {
   main {
-    width: 50vw;
+    width: 60vw;
   }
 
   .github-fork-button {
