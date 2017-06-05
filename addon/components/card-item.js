@@ -22,7 +22,7 @@ export default Component.extend({
   createShiftAnimation: null,
   // state
   style: null,
-  currentAnimation: null,
+  lastIndex: -1,
   // computed state
   factor: computed(`index`, `visibleItemAmount`, function () {
     const index = this.get(`index`)
@@ -39,11 +39,13 @@ export default Component.extend({
     this._super(...args)
   },
   didReceiveAttrs(...args) {
-    const currentAnimation = this.get(`currentAnimation`)
-    if (currentAnimation) {
-      currentAnimation.pause()
+    const index = this.get(`index`)
+    const lastIndex = this.get(`lastIndex`)
+    const isInitialRender = this.get(`isInitialRender`)
+    if (!isInitialRender && (lastIndex === -1 || lastIndex !== index)) {
+      run.scheduleOnce(`afterRender`, this.shiftCard)
     }
-    run.scheduleOnce(`afterRender`, this.shiftCard)
+    this.set(`lastIndex`, index)
     this._super(...args)
   },
   willDestroyElement(...args) {
@@ -54,8 +56,10 @@ export default Component.extend({
       const opts = this.createFadeAnimation()
       opts.targets = element
       anime(opts).finished.then(() => {
-        element.remove()
-        this.sendAction(`onFadeEnd`)
+        run(() => {
+          element.remove()
+          this.sendAction(`onFadeEnd`)
+        })
       })
     }
     this._super(...args)
