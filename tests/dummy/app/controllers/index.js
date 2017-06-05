@@ -20,8 +20,8 @@ for (let i = 0; i < 20; i++) {
 
 const createCardFadeAnimation1 = () => ({
   translateX: {
-    value: 1024,
-    duration: 350,
+    value: `100vw`,
+    duration: 250,
   },
   rotate: {
     value: `10deg`,
@@ -35,7 +35,7 @@ const createCardFadeAnimation1 = () => ({
 })
 const createCardFadeAnimation2 = () => ({
   translateY: {
-    value:1024,
+    value: `100vh`,
     duration: 350,
   },
   translateX: {

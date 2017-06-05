@@ -7,8 +7,8 @@ import layout from '../templates/components/card-stack'
 
 const createCardFadeAnimation = () => ({
   translateX: {
-    value: 1024,
-    duration: 350,
+    value: `100vw`,
+    duration: 250,
   },
   rotate: {
     value: `10deg`,
@@ -21,14 +21,14 @@ const createCardFadeAnimation = () => ({
   easing: `easeInQuad`,
 })
 
-const createCardShiftAnimation = (factor) => ({
+const createCardShiftAnimation = factor => ({
   translateY: factor * -15 + `px`,
   scale: 1 - factor * .05,
   duration: 300,
   easing: `easeOutSine`,
 })
 
-const getInitialCardStyle = (factor) => `transform: translateY(${factor * -15}px) scale(${1 - factor * .05});`
+const getInitialCardStyle = factor => `transform: translateY(${factor * -15}px) scale(${1 - factor * .05});`
 
 export default Component.extend({
   // template
