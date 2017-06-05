@@ -1,6 +1,6 @@
 {
   "name": "ember-card-stacks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Beautiful animated card stacks for your ember application.",
   "keywords": [
     "ember-addon",
