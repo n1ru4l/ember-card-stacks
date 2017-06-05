@@ -1,26 +1,21 @@
 # ember-card-stacks
 
-This README outlines the details of collaborating on this Ember addon.
+![Example demo](preview.gif)
+
+Beautiful card stacks for your ember application ([Demo](https://n1ru4l.github.io/ember-card-stacks/)).
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-card-stacks`
-* `npm install`
+* `cd <your-ember-project-directory>`
+* `ember install ember-card-stacks`
 
-## Running
+## Getting started
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Check out the [demo](https://n1ru4l.github.io/ember-card-stacks/) hosted on github-pages for setting up your first card-stack within 5 minutes.
 
-## Running Tests
+## Resources and Credits
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+* Thanks to [@crnacura](https://github.com/crnacura) from codrops which inspired me to create this plugin :)
+* [Original Codrops article](https://tympanus.net/codrops/2015/10/28/effect-ideas-for-card-stacks/)
+* [Demo repository of the Codrops article](https://github.com/codrops/CardStackEffects)
 
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).

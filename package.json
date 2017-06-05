@@ -1,18 +1,21 @@
 {
   "name": "ember-card-stacks",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Beautiful animated card stacks for your ember application.",
   "keywords": [
     "ember-addon",
+    "card-stacks",
+    "card",
+    "animation",
     "ember"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Laurin Quast <laurinquast@googlemail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/n1ru4l/ember-card-stacks",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -20,7 +23,6 @@
     "lint": "eslint app addon tests config --fix"
   },
   "dependencies": {
-    "animejs": "^2.0.2",
     "broccoli-funnel": "^1.2.0",
     "broccoli-merge-trees": "^2.0.0",
     "ember-cli-babel": "^6.0.0",
@@ -28,6 +30,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.4.0"
   },
   "devDependencies": {
+    "animejs": "^2.0.2",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.14.0-beta.1",
