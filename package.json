@@ -20,7 +20,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember try:each",
-    "lint": "eslint app addon tests config --fix"
+    "lint": "eslint --ignore-path .gitignore --fix ."
   },
   "dependencies": {
     "broccoli-funnel": "^1.2.0",

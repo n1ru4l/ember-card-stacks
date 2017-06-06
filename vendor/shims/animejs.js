@@ -1,3 +1,4 @@
+/* eslint-disable */
 (function() {
   function vendorModule() {
     'use strict'

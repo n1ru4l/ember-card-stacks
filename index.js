@@ -5,7 +5,7 @@ const path = require(`path`)
 const Funnel = require(`broccoli-funnel`)
 const MergeTrees = require(`broccoli-merge-trees`)
 const addonDefinition = {
-  name: 'ember-card-stacks',
+  name: `ember-card-stacks`,
   afterInstall() {
     return this.addPackageToProject(`animejs`)
   },
@@ -20,7 +20,7 @@ const addonDefinition = {
       files: [ `anime.min.js` ],
     })
     return new MergeTrees([ vendorTree, animeTree ])
-  }
+  },
 }
 
 module.exports = addonDefinition
