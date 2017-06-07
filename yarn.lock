@@ -2266,6 +2266,14 @@ ember-ajax@^3.0.0:
   dependencies:
     ember-cli-babel "^6.0.0"
 
+ember-animejs-shim@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/ember-animejs-shim/-/ember-animejs-shim-0.1.0.tgz#4beab9fa57f9a7c7c44b39ce4a8d5a2789d3269f"
+  dependencies:
+    broccoli-funnel "^1.2.0"
+    broccoli-merge-trees "^2.0.0"
+    ember-cli-babel "^6.0.0"
+
 ember-basic-dropdown@0.20.0, ember-basic-dropdown@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/ember-basic-dropdown/-/ember-basic-dropdown-0.20.0.tgz#6db6b452b7a50b70cbe51a0033e7761ae9d867fe"
@@ -2284,7 +2292,7 @@ ember-cli-babel@^5.1.10, ember-cli-babel@^5.1.3, ember-cli-babel@^5.1.5, ember-c
     ember-cli-version-checker "^1.0.2"
     resolve "^1.1.2"
 
-ember-cli-babel@^6.0.0, ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.0.0-beta.9:
+ember-cli-babel@^6.0.0, ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-beta.7:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.2.0.tgz#298c04a6c00ca5ce99ff0a3bc2f2428dad5d37cb"
   dependencies:
@@ -2657,12 +2665,6 @@ ember-maybe-import-regenerator@^0.1.4:
     broccoli-merge-trees "^1.0.0"
     ember-cli-babel "^6.0.0-beta.4"
     regenerator-runtime "^0.9.5"
-
-ember-native-dom-event-dispatcher@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/ember-native-dom-event-dispatcher/-/ember-native-dom-event-dispatcher-0.6.1.tgz#46e8e9e5d556a6cc619b26e49c16b71e02ca06c4"
-  dependencies:
-    ember-cli-babel "^6.0.0-beta.9"
 
 ember-paper@^1.0.0-alpha.19:
   version "1.0.0-alpha.19"

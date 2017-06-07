@@ -23,8 +23,7 @@
     "lint": "eslint --ignore-path .gitignore --fix ."
   },
   "dependencies": {
-    "broccoli-funnel": "^1.2.0",
-    "broccoli-merge-trees": "^2.0.0",
+    "ember-animejs-shim": "^0.1.0",
     "ember-cli-babel": "^6.0.0",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-htmlbars-inline-precompile": "^0.4.0",

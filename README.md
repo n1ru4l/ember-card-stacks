@@ -8,7 +8,6 @@ Beautiful card stacks for your ember application ([Demo](https://n1ru4l.github.i
 
 * `cd <your-ember-project-directory>`
 * `ember install ember-card-stacks`
-* `npm install animejs`
 
 ## Getting started
 
