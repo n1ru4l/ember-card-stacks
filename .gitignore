@@ -9,6 +9,7 @@
 /bower_components
 
 # misc
+/.idea
 /.sass-cache
 /connect.lock
 /coverage/*
@@ -16,7 +17,6 @@
 npm-debug.log*
 yarn-error.log
 testem.log
-.idea
 
 # ember-try
 .node_modules.ember-try/
