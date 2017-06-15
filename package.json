@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "ember-animejs-shim": "^0.1.0",
-    "ember-cli-babel": "^6.0.0",
-    "ember-cli-htmlbars": "^1.1.1",
+    "ember-cli-babel": "^6.4.1",
+    "ember-cli-htmlbars": "^2.0.2",
     "ember-cli-htmlbars-inline-precompile": "^0.4.0",
     "ember-truth-helpers": "^1.3.0"
   },
@@ -33,8 +33,8 @@
     "animejs": "^2.0.2",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-cli": "~2.14.0-beta.1",
-    "ember-cli-dependency-checker": "^1.3.0",
+    "ember-cli": "^2.13.2",
+    "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^3.0.0",
     "ember-cli-github-pages": "^0.1.2",
     "ember-cli-inject-live-reload": "^1.4.1",
@@ -50,9 +50,9 @@
     "ember-paper": "^1.0.0-alpha.19",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.14.0-beta.1",
-    "eslint": "^3.19.0",
-    "esprima": "^3.1.3",
-    "loader.js": "^4.2.3"
+    "eslint": "^4.0.0",
+    "esprima": "^4.0.0",
+    "loader.js": "^4.4.1"
   },
   "engines": {
     "node": ">= 4"
