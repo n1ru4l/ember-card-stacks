@@ -1,4 +1,9 @@
-# ember-card-stacks [![npm version](https://badge.fury.io/js/ember-card-stacks.svg)](https://badge.fury.io/js/ember-card-stacks) [![Ember Observer Score](https://emberobserver.com/badges/ember-card-stacks.svg)](https://emberobserver.com/addons/ember-card-stacks) [![dependencies Status](https://david-dm.org/n1ru4l/ember-card-stacks/status.svg)](https://david-dm.org/n1ru4l/ember-card-stacks) [![devDependencies Status](https://david-dm.org/n1ru4l/ember-card-stacks/dev-status.svg)](https://david-dm.org/n1ru4l/ember-card-stacks?type=dev)
+# ember-card-stacks 
+
+[![npm version](https://badge.fury.io/js/ember-card-stacks.svg)](https://badge.fury.io/js/ember-card-stacks)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-card-stacks.svg)](https://emberobserver.com/addons/ember-card-stacks)
+[![dependencies Status](https://david-dm.org/n1ru4l/ember-card-stacks/status.svg)](https://david-dm.org/n1ru4l/ember-card-stacks)
+[![devDependencies Status](https://david-dm.org/n1ru4l/ember-card-stacks/dev-status.svg)](https://david-dm.org/n1ru4l/ember-card-stacks?type=dev)
 
 ![Example demo](preview.gif)
 
