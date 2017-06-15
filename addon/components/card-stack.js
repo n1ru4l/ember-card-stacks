@@ -22,13 +22,13 @@ const createCardFadeAnimation = () => ({
 })
 
 const createCardShiftAnimation = factor => ({
-  translateY: factor * -15 + `px`,
+  translateY: factor * -2.5 + `vh`,
   scale: 1 - factor * .05,
   duration: 300,
   easing: `easeOutSine`,
 })
 
-const getInitialCardStyle = factor => `transform: translateY(${factor * -15}px) scale(${1 - factor * .05});`
+const getInitialCardStyle = factor => `transform: translateY(${factor * -2.5}vh) scale(${1 - factor * .05});`
 
 export default Component.extend({
   // template
